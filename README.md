@@ -26,7 +26,7 @@
 | product_condition_id | integer    | null: false                   |
 | shipping_fee_id      | integer    | null: false                   |
 | shipping_origin_id   | integer    | null: false                   |
-| delivery_days_id     | integer    | null: false                   |
+| delivery_day_id     | integer    | null: false                   |
 | price                | integer    | null: false                   |
 | user                 | references | foreign_key: true,null: false |
 
@@ -50,7 +50,6 @@
 ## addressesテーブル
 | Column             | Type       | Options                       |
 | ------------------ | ---------- | ----------------------------- |
-| delivery_address   | string     | null: false                   |
 | postal_code        | string     | null: false                   |
 | shipping_origin_id | integer    | null: false                   |
 | city_town_village  | string     | null: false                   |
