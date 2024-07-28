@@ -49,7 +49,7 @@
 - has_one :address
 
 
-## addressテーブル
+## addressesテーブル
 | Column            | Type       | Options           |
 | ----------------- | ---------- | ----------------- |
 | delivery_address  | string     | null: false       |
