@@ -1,39 +1,38 @@
 # README
 
-## deviseテーブル
-| Column          | Type   | Options     |
-| --------------- | ------ | ----------- |
-| nickname        | string | null: false |
-| email           | string | null: false, unique: true |
-| password        | string | null: false |
-| last_name       | string | null: false |
-| first_name      | string | null: false |
-| last_name_kana  | string | null: false |
-| first_name_kana | string | null: false |
-| birthday        | string | null: false |
+## usersテーブル
+| Column             | Type   | Options     |
+| ------------------ | ------ | ----------- |
+| nickname           | string | null: false |
+| email              | string | null: false, unique: true |
+| encrypted_password |        | string | null: false |
+| last_name          | string | null: false |
+| first_name         | string | null: false |
+| last_name_kana     | string | null: false |
+| first_name_kana    | string | null: false |
+| date               | string | null: false |
 
 ### Association
 - has_many :items
-- has_many :orders
+- has_many :order
 
 
 ## itemsテーブル
-| Column              | Type       | Options           |
-| ------------------- | ---------- | ----------------- |
-| product_name        | string     | null: false       |
-| product_description | text       | null: false       |
-| category            | string     | null: false       |
-| product_condition   | string     | null: false       |
-| shipping_fee        | string     | null: false       | 
-| shipping_origin     | string     | null: false       |
-| delivery_days       | string     | null: false       |
-| price               | integer    | null: false       |
-| seller_id           | references | foreign_key: true |
-| devise              | references | foreign_key: true |
+| Column               | Type       | Options           |
+| -------------------- | ---------- | ----------------- |
+| product_name         | string     | null: false       |
+| product_description  | text       | null: false       |
+| category_id          | integer    | null: false       |
+| product_condition_id | integer    | null: false       |
+| shipping_fee_id      | integer    | null: false       | 
+| shipping_origin_id   | integer    | null: false       |
+| delivery_days_id     | integer    | null: false       |
+| price                | integer    | null: false       |
+| user                 | references | foreign_key: true |
 
 ### Association
-- belongs_to :devise
-- has_one :orders
+- belongs_to :user
+- has_one :order
 
 
 ## ordersテーブル
@@ -45,17 +44,16 @@
 | item            | references | foreign_key: true |
 
 ### Association
-- belongs_to :devise
+- belongs_to :user
 - belongs_to :item
-- has_many :shared
+- has_one :address
 
 
-## sharedテーブル
+## addressテーブル
 | Column            | Type       | Options           |
 | ----------------- | ---------- | ----------------- |
 | delivery_address  | string     | null: false       |
 | postal _code      | string     | null: false       |
-| prefecture        | string     | null: false       |
 | city_town_village | string     | null: false       |
 | street_number     | string     | null: false       |
 | building_name     | string     | 
@@ -63,4 +61,4 @@
 | order             | references | foreign_key: true |
 
 ### Association
-- belongs_to :orders
+- belongs_to :order
