@@ -10,7 +10,7 @@
 | first_name         | string | null: false |
 | last_name_kana     | string | null: false |
 | first_name_kana    | string | null: false |
-| birthday           | date   | null: false |
+| birth_date         | date   | null: false |
 
 ### Association
 - has_many :items
@@ -26,7 +26,7 @@
 | product_condition_id | integer    | null: false                   |
 | shipping_fee_id      | integer    | null: false                   |
 | shipping_origin_id   | integer    | null: false                   |
-| delivery_day_id     | integer    | null: false                   |
+| delivery_day_id      | integer    | null: false                   |
 | price                | integer    | null: false                   |
 | user                 | references | foreign_key: true,null: false |
 
