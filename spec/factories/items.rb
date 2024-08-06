@@ -4,7 +4,7 @@ FactoryBot.define do
     product_description { 'これはテストです。笑' }
     category_id { 2 }
     product_condition_id { 2 }
-    shipping_fee_id { 2 }
+    shipping_charge_id { 2 }
     shipping_origin_id { 2 }
     delivery_day_id { 2 }
     price { 500 }
