@@ -6,7 +6,7 @@ class Item < ApplicationRecord
   belongs_to :category
   belongs_to :product_condition
   belongs_to :shipping_charge
-  belongs_to :prefecture
+  belongs_to :shipping_origin
   belongs_to :delivery_day
 
   validates :image, presence: true
