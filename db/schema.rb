@@ -52,12 +52,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_08_13_113235) do
     t.index ["order_id"], name: "index_addresses_on_order_id"
   end
 
-  create_table "item_conditions", charset: "utf8", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "items", charset: "utf8", force: :cascade do |t|
     t.string "product_name", null: false
     t.text "product_description", null: false
